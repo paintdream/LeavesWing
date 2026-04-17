@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.paintdream.leaveswing"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="28" android:targetSdkVersion="35" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:label="LeavesWing"
+        android:hardwareAccelerated="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="org.qtproject.qt.android.bindings.QtActivity"
+            android:configChanges="orientation|screenSize|screenLayout|uiMode|locale|fontScale|density"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="LeavesWing" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
