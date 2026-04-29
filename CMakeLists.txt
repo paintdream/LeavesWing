@@ -222,6 +222,13 @@ if(WIN32)
     set_target_properties(LeavesWing PROPERTIES
         WIN32_EXECUTABLE TRUE
     )
+
+    if(MSVC)
+        string(REPLACE "/EHsc" "/EHa" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+        if(NOT CMAKE_CXX_FLAGS MATCHES "/EHa")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHa")
+        endif()
+    endif()
 endif()
 
 # ── Install ──────────────────────────────────────────────────────────────────
